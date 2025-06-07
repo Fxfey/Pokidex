@@ -8,13 +8,16 @@ export default function SimplePokemonView({
 }: Readonly<{ data: simplePokemonView }>) {
     const { id, name, type, image } = data;
     console.log(type);
+
+    const styledName =
+        (name ?? '').charAt(0).toUpperCase() + (name ?? '').slice(1);
     return (
         <SimpleViewStyled>
-            <SimplePokemonTitle name={name} />
+            {/* Title Component */}
+            <SimplePokemonTitle name={styledName} id={id} />
             {/* Image Component */}
             <SimplePokemonImage image={image} name={name} />
-            {/* Name Component */}
-            {/* id Component */}
+
             {/* Type Component */}
         </SimpleViewStyled>
     );
