@@ -10,7 +10,7 @@ export const getSimpleView = async (
             id: data.id,
             name: data.name,
             type: data.types,
-            image: data.sprites.front_default,
+            image: data.sprites.other?.['official-artwork'].front_default,
         };
 
         return simplePokemonView;

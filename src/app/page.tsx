@@ -6,6 +6,8 @@ import { getSimpleView } from './lib/pokemon/fetchSimpleView';
 import { simplePokemonView } from './types/simplePokemonView';
 
 import Title from './components/PageTitle/PageTitle';
+import SimplePokemonView from './components/SimpleView/SimpleView';
+import PokedexContainer from './components/PokedexContainer/PokedexContainer';
 
 export type allPokemon = {
     name: string;
@@ -35,18 +37,19 @@ export default function Pokedex() {
             <Title>Title</Title>
 
             {/* Pokedex grid */}
-            <section>
+            <PokedexContainer>
                 {pokemonViews ? (
-                    pokemonViews.map((view) => (
-                        <p key={view.id}>
-                            {view.name} - #{view.id}
-                        </p>
+                    pokemonViews.map((thePokemon) => (
+                        <SimplePokemonView
+                            key={thePokemon.name}
+                            data={thePokemon}
+                        />
                     ))
                 ) : (
                     // Perform loading
                     <p>Loading Pokémon...</p>
                 )}
-            </section>
+            </PokedexContainer>
         </div>
     );
 }
