@@ -5,6 +5,8 @@ import { getAllPokemon } from './lib/pokemon/fetchAll';
 import { getSimpleView } from './lib/pokemon/fetchSimpleView';
 import { simplePokemonView } from './types/simplePokemonView';
 
+import Title from './components/PageTitle/PageTitle';
+
 export type allPokemon = {
     name: string;
     url: string;
@@ -32,7 +34,7 @@ export default function Pokedex() {
 
     return (
         <div>
-            <h1>Pokedex</h1>
+            <Title>Title</Title>
 
             {/* Pokedex grid */}
             <section>
