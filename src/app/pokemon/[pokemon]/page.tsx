@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 import ProfileTitle from '@/app/components/ProfileTitle/ProfileTitle';
 import ProfileContainer from '@/app/components/ProfileContainer/ProfileContainer';
 import ProfileImage from '@/app/components/ProfileImage/ProfileImage';
+import ProfileStats from '@/app/components/ProfileStats/ProfileStats';
 
 export default function PokemonPage() {
     const params = useParams();
@@ -46,13 +47,13 @@ export default function PokemonPage() {
                     <div
                         style={{
                             display: 'flex',
-                            height: '100%',
+                            height: '90%',
                             alignItems: 'center',
                         }}
                     >
                         <span
                             style={{
-                                width: '50%',
+                                width: '65%',
                             }}
                         >
                             <ProfileImage
@@ -60,7 +61,15 @@ export default function PokemonPage() {
                                 name={pokemonData.name}
                             />
                         </span>
-                        {/* <ProfileStats /> */}
+                        <ProfileStats
+                            weight={pokemonData.weight}
+                            height={pokemonData.height}
+                            id={pokemonData.id}
+                            name={pokemonData.name}
+                            type={pokemonData.type}
+                            image={null}
+                            stats={pokemonData.stats}
+                        />
                     </div>
                 </ProfileContainer>
             ) : (
