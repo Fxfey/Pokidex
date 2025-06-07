@@ -4,14 +4,19 @@ import { SimplePokemonImageStyle } from './SimplePokemonImage.styled';
 export default function SimplePokemonImage({
     image,
     name,
-}: Readonly<{ image: string; name: string }>) {
+}: Readonly<{ image: string | null | undefined; name: string | null }>) {
     return (
         <SimplePokemonImageStyle>
-            <Image
-                src={image}
-                alt={`A front facing view of the Pokemon ${name}`}
-                fill
-            />
+            {image ? (
+                <Image
+                    src={image}
+                    alt={`A front facing view of the Pokemon ${name}`}
+                    fill
+                />
+            ) : (
+                // No image URL
+                <p>Sorry, no image exists</p>
+            )}
         </SimplePokemonImageStyle>
     );
 }

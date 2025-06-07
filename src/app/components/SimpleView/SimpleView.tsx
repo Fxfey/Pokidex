@@ -1,6 +1,7 @@
 import { simplePokemonView } from '@/app/types/simplePokemonView';
 import { SimpleViewStyled } from './SimpleView.styled';
 import SimplePokemonImage from '../PokemonImages/Simple/SimplePokemonImage';
+import SimplePokemonTitle from '../PokemonTitles/Simple/SimplePokemonTitle';
 
 export default function SimplePokemonView({
     data,
@@ -9,9 +10,9 @@ export default function SimplePokemonView({
     console.log(type);
     return (
         <SimpleViewStyled>
-            <SimplePokemonImage image={image} name={name} />
+            <SimplePokemonTitle name={name} />
             {/* Image Component */}
-            {name}
+            <SimplePokemonImage image={image} name={name} />
             {/* Name Component */}
             {/* id Component */}
             {/* Type Component */}
