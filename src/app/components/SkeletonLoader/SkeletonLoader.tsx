@@ -66,7 +66,19 @@ export const SkeltonLoaderTitle = styled.div`
 `;
 
 export const SkeltonLoaderImage = styled.div`
-    height: 200px;
+    height: 275px;
+
+    @media screen and (min-width: 768px) {
+        height: 300px;
+    }
+
+    @media screen and (min-width: 1024px) {
+        height: 275px;
+    }
+
+    @media screen and (min-width: 1440px) {
+        height: 250px;
+    }
 `;
 
 export default function SkeletonLoader() {

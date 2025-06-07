@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { ProfileImageStyled } from './ProfileImage.styledd';
+import { ProfileImageStyled } from './ProfileImage.styled';
 
 export default function ProfileImage({
     image,

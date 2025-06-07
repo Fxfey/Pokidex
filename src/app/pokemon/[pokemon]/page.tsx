@@ -8,6 +8,7 @@ import ProfileTitle from '@/app/components/ProfileTitle/ProfileTitle';
 import ProfileContainer from '@/app/components/ProfileContainer/ProfileContainer';
 import ProfileImage from '@/app/components/ProfileImage/ProfileImage';
 import ProfileStats from '@/app/components/ProfileStats/ProfileStats';
+import Link from 'next/link';
 
 export default function PokemonPage() {
     const params = useParams();
@@ -44,13 +45,7 @@ export default function PokemonPage() {
             {pokemonData ? (
                 <ProfileContainer types={pokemonData.type}>
                     <ProfileTitle>{styledName}</ProfileTitle>
-                    <div
-                        style={{
-                            display: 'flex',
-                            height: '90%',
-                            alignItems: 'center',
-                        }}
-                    >
+                    <div className="flex h-[90%] items-center flex-col sm:flex-row">
                         <span
                             style={{
                                 width: '65%',
@@ -71,9 +66,21 @@ export default function PokemonPage() {
                             stats={pokemonData.stats}
                         />
                     </div>
+
+                    <Link
+                        href={'/'}
+                        style={{
+                            marginLeft: '15px',
+                            backgroundColor: '#222222',
+                            padding: '5px 10px',
+                            borderRadius: '5px',
+                        }}
+                    >
+                        Take me back!
+                    </Link>
                 </ProfileContainer>
             ) : (
-                <p>loading</p>
+                <p>Loading...</p>
             )}
         </>
     );
