@@ -6,6 +6,7 @@ import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import ProfileTitle from '@/app/components/ProfileTitle/ProfileTitle';
 import ProfileContainer from '@/app/components/ProfileContainer/ProfileContainer';
+import ProfileImage from '@/app/components/ProfileImage/ProfileImage';
 
 export default function PokemonPage() {
     const params = useParams();
@@ -42,6 +43,25 @@ export default function PokemonPage() {
             {pokemonData ? (
                 <ProfileContainer types={pokemonData.type}>
                     <ProfileTitle>{styledName}</ProfileTitle>
+                    <div
+                        style={{
+                            display: 'flex',
+                            height: '100%',
+                            alignItems: 'center',
+                        }}
+                    >
+                        <span
+                            style={{
+                                width: '50%',
+                            }}
+                        >
+                            <ProfileImage
+                                image={pokemonData.image}
+                                name={pokemonData.name}
+                            />
+                        </span>
+                        {/* <ProfileStats /> */}
+                    </div>
                 </ProfileContainer>
             ) : (
                 <p>loading</p>
