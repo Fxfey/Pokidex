@@ -18,7 +18,7 @@ export default function SimplePokemonView({
             {/* Image Component */}
             <SimplePokemonImage image={image} name={name} />
             {/* Type Component */}
-            <SimplePokemonTypes types={type} />
+            <SimplePokemonTypes types={type} name={name} />
         </SimpleViewStyled>
     );
 }

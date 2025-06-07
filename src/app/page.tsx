@@ -8,6 +8,7 @@ import { simplePokemonView } from './types/simplePokemonView';
 import Title from './components/PageTitle/PageTitle';
 import SimplePokemonView from './components/SimpleView/SimpleView';
 import PokedexContainer from './components/PokedexContainer/PokedexContainer';
+import SkeletonLoader from './components/SkeletonLoader/SkeletonLoader';
 
 export type allPokemon = {
     name: string;
@@ -46,8 +47,7 @@ export default function Pokedex() {
                         />
                     ))
                 ) : (
-                    // Perform loading
-                    <p>Loading Pokémon...</p>
+                    <SkeletonLoader />
                 )}
             </PokedexContainer>
         </div>
