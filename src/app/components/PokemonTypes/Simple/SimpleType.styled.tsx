@@ -44,10 +44,15 @@ export const SimpleTypeStyled = styled.div<SimpleTypeStyledProps>`
     }};
     border-radius: 0 5px 5px 0;
     padding: 2px;
+    padding-right: 5px;
     margin-bottom: 6px;
     height: 35px;
     width: 35px;
     display: flex;
     align-items: center;
     justify-content: center;
+    color: var(--black-1);
+    box-shadow: rgba(0, 0, 0, 0.4) 2px 0px 4px,
+        rgba(0, 0, 0, 0.3) 7px 0px 13px -3px,
+        rgba(0, 0, 0, 0.2) -3px 0px 0px inset;
 `;

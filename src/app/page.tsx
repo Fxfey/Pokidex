@@ -34,7 +34,7 @@ export default function Pokedex() {
 
     return (
         <div>
-            <Title>Title</Title>
+            <Title>Pokedex</Title>
 
             {/* Pokedex grid */}
             <PokedexContainer>

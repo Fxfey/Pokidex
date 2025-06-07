@@ -15,6 +15,7 @@ import {
     Skull,
     CircleDashed,
     Sprout,
+    Ban,
 } from 'lucide-react';
 
 export default function SimpleType({ type }: Readonly<{ type: string }>) {
@@ -67,7 +68,7 @@ export default function SimpleType({ type }: Readonly<{ type: string }>) {
             typeIcon = <CircleDashed />;
             break;
         default:
-            typeIcon = 'N/A';
+            typeIcon = <Ban />;
             break;
     }
 
