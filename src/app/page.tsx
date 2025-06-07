@@ -13,7 +13,6 @@ export type allPokemon = {
 };
 
 export default function Pokedex() {
-    const [pokemon, setPokemon] = useState<allPokemon[] | null>(null);
     const [pokemonViews, setPokemonViews] = useState<
         simplePokemonView[] | null
     >(null);
@@ -21,7 +20,6 @@ export default function Pokedex() {
     useEffect(() => {
         async function fetchPokemon() {
             const allPokemon = await getAllPokemon();
-            setPokemon(allPokemon);
 
             const constructSimpleView = await Promise.all(
                 allPokemon.map((thePokemon) => getSimpleView(thePokemon.name)),
