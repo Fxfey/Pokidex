@@ -1,8 +1,11 @@
 import { PokeAPI } from './init';
 
 export const getAllPokemon = async () => {
-    // Set the limit to 151 to get the original Pokemon
-    await PokeAPI.listPokemons(0, 151)
-        .then((data) => console.log(data))
-        .catch((error) => console.error(error));
+    try {
+        const data = await PokeAPI.listPokemons(0, 15);
+        return data.results;
+    } catch (error) {
+        console.error(error);
+        return [];
+    }
 };
