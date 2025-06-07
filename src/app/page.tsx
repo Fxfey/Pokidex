@@ -41,10 +41,12 @@ export default function Pokedex() {
             <PokedexContainer>
                 {pokemonViews ? (
                     pokemonViews.map((thePokemon) => (
-                        <SimplePokemonView
+                        <a
+                            href={`/pokemon/${thePokemon.name}`}
                             key={thePokemon.name}
-                            data={thePokemon}
-                        />
+                        >
+                            <SimplePokemonView data={thePokemon} />
+                        </a>
                     ))
                 ) : (
                     <SkeletonLoader />
