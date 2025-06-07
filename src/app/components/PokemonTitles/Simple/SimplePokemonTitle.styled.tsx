@@ -2,7 +2,7 @@
 import styled from 'styled-components';
 
 export const SimplePokemonTitleStyle = styled.h2`
-    background-color: var(--grey-1);
+    background-color: var(--white-2);
     color: var(--black-1);
     font-weight: bold;
     text-align: center;
@@ -15,4 +15,8 @@ export const SimplePokemonTitleStyle = styled.h2`
 
     display: flex;
     justify-content: space-around;
+
+    @media (prefers-color-scheme: light) {
+        background-color: var(--grey-1);
+    }
 `;
