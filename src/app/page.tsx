@@ -30,16 +30,23 @@ export default function Pokedex() {
         fetchPokemon();
     }, []);
 
-    // Perform loading view here
-    if (!pokemon || !pokemonViews) return <p>Loading...</p>;
-
     return (
         <div>
-            {pokemonViews.map((view) => (
-                <p key={view.id}>
-                    {view.name} - #{view.id}
-                </p>
-            ))}
+            <h1>Pokedex</h1>
+
+            {/* Pokedex grid */}
+            <section>
+                {pokemonViews ? (
+                    pokemonViews.map((view) => (
+                        <p key={view.id}>
+                            {view.name} - #{view.id}
+                        </p>
+                    ))
+                ) : (
+                    // Perform loading
+                    <p>Loading Pokémon...</p>
+                )}
+            </section>
         </div>
     );
 }
