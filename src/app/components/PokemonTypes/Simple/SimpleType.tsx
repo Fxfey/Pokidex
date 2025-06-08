@@ -16,6 +16,7 @@ import {
     CircleDashed,
     Sprout,
     Ban,
+    Sparkle,
 } from 'lucide-react';
 
 export default function SimpleType({ type }: Readonly<{ type: string }>) {
@@ -63,6 +64,9 @@ export default function SimpleType({ type }: Readonly<{ type: string }>) {
             break;
         case 'rock':
             typeIcon = <Sprout />;
+            break;
+        case 'fairy':
+            typeIcon = <Sparkle />;
             break;
         case 'normal':
             typeIcon = <CircleDashed />;

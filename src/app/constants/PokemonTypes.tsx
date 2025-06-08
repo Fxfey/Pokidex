@@ -15,6 +15,7 @@ import {
     CircleDashed,
     Sprout,
     Ban,
+    Sparkle,
 } from 'lucide-react';
 
 export function getTypeVars(pokemonType: string, size: number) {
@@ -103,6 +104,12 @@ export function getTypeVars(pokemonType: string, size: number) {
             typeVars = {
                 icon: <Sprout size={size} />,
                 hexCode: '#C6B280',
+            };
+            break;
+        case 'fairy':
+            typeVars = {
+                icon: <Sparkle size={size} />,
+                hexCode: '#f9c0f1',
             };
             break;
         case 'normal':

@@ -39,6 +39,8 @@ export const SimpleTypeStyled = styled.div<SimpleTypeStyledProps>`
                 return '#B28DD9';
             case 'rock':
                 return '#C6B280';
+            case 'fairy':
+                return '#f9c0f1';
             default:
                 return 'white'; // fallback color
         }
