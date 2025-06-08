@@ -16,6 +16,7 @@ export type allPokemon = {
 };
 
 export default function Pokedex() {
+    // Set state expecting array of simplePokemonViews (the cards)
     const [pokemonViews, setPokemonViews] = useState<
         simplePokemonView[] | null
     >(null);
@@ -23,10 +24,11 @@ export default function Pokedex() {
     async function fetchPokemon() {
         const allPokemon = await getAllPokemon();
 
-        const constructSimpleView = await Promise.all(
+        // On all pokemon perform the getSimpleView function
+        const constructSimpleViews = await Promise.all(
             allPokemon.map((thePokemon) => getSimpleView(thePokemon.name)),
         );
-        setPokemonViews(constructSimpleView);
+        setPokemonViews(constructSimpleViews);
     }
 
     fetchPokemon();
@@ -47,6 +49,7 @@ export default function Pokedex() {
                         </a>
                     ))
                 ) : (
+                    // Whilst content ins being loaded use a skeleton loader
                     <SkeletonLoader />
                 )}
             </PokedexContainer>
