@@ -59,3 +59,13 @@ styled-components.vscode-styled-components
 Initially using a separated approach for the component and styling seemed like a maintainable approach. After creating many blocks this way, it feels as if it created more bloat then actually required. Keeping the style within the block would be a more feasible approach for a project of this scale.
 
 Also if a component required multiple areas of style for different components you can allow for that in one file. i.e. creating a block using flex with many different children.
+
+### Loading states
+
+I decided to build out a separate Skeleton loader for the Pokedex grid as its own component, this is far from re-usable and maintainable. Instead a better approach would be to allow a loading state to to be passed to components which would not take any data - this would then populate the relevant areas which would require skeleton loaders.
+
+### Reusability
+
+The way this project has been setup hasn't aligned with future proofing too well, i.e the simpleView and AdvancedView for pokemon both call the `getPokemonByName` method. A better approach here would be to make a wrapper for this and handle the return data in the specific method instead.
+
+This is also the time for Components we use like `<Title >` - this should of been created in a way which takes in arguments to determine sizing, style etc.
