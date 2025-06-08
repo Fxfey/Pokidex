@@ -6,6 +6,7 @@ type SimpleTypeStyledProps = {
 };
 
 export const SimpleTypeStyled = styled.div<SimpleTypeStyledProps>`
+    /* Perform a switch case for the type to return that color */
     background-color: ${({ type }) => {
         switch (type) {
             case 'fire':
@@ -42,6 +43,7 @@ export const SimpleTypeStyled = styled.div<SimpleTypeStyledProps>`
                 return 'white'; // fallback color
         }
     }};
+
     border-radius: 0 5px 5px 0;
     padding: 2px;
     padding-right: 5px;
@@ -55,4 +57,9 @@ export const SimpleTypeStyled = styled.div<SimpleTypeStyledProps>`
     box-shadow: rgba(0, 0, 0, 0.4) 2px 0px 4px,
         rgba(0, 0, 0, 0.3) 7px 0px 13px -3px,
         rgba(0, 0, 0, 0.2) -3px 0px 0px inset;
+
+    /* Add contrast to the type icon */
+    svg {
+        fill: rgba(0, 0, 0, 0.2);
+    }
 `;
