@@ -18,22 +18,24 @@ export default function PokemonPage() {
     );
 
     const parsedPokemonName = params.pokemon;
+
+    // Check the type of pokemon name param
+    // If string assign, otherwise access array index
     const pokemonName =
         typeof parsedPokemonName === 'string'
             ? parsedPokemonName
             : parsedPokemonName?.[0];
 
+    // Get advanced Pokemon view
     async function getPokemonInformation() {
         if (!pokemonName) return;
 
         const data = await getAdvancedView(pokemonName);
         setPokemonData(data);
     }
-
     getPokemonInformation();
 
-    console.log(pokemonData);
-
+    // Capitalise the first letter
     const styledName =
         (pokemonName ?? '').charAt(0).toUpperCase() +
         (pokemonName ?? '').slice(1);
@@ -70,7 +72,8 @@ export default function PokemonPage() {
                         style={{
                             marginLeft: '15px',
                             backgroundColor: '#222222',
-                            padding: '5px 10px',
+                            padding: '10px 15px',
+                            fontSize: '16px',
                             borderRadius: '5px',
                         }}
                     >
