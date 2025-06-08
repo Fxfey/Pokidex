@@ -1,12 +1,16 @@
 import { PokeAPI } from './init';
 import { advancedPokemonView } from '@/app/types/advancedPokemonView';
 
+// Use getPokemonByName with the passed name and return a advancedPokemonView object
+// Used on a Pokemons profile page
+
 export const getAdvancedView = async (
     name: string,
 ): Promise<advancedPokemonView> => {
     try {
         const data = await PokeAPI.getPokemonByName(name);
 
+        // construct empty stat data as a fallback
         const statData = {
             hp: 0,
             attack: 0,
@@ -14,6 +18,7 @@ export const getAdvancedView = async (
             speed: 0,
         };
 
+        // Map stats
         data.stats.forEach((stat) => {
             switch (stat.stat.name) {
                 case 'hp':

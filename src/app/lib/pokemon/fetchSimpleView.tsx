@@ -1,6 +1,8 @@
 import { PokeAPI } from './init';
 import { simplePokemonView } from '@/app/types/simplePokemonView';
 
+// Use getPokemonByName with the passed name and return a simplePokemonView object
+
 export const getSimpleView = async (
     name: string,
 ): Promise<simplePokemonView> => {
