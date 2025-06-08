@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { getAllPokemon } from './lib/pokemon/fetchAll';
 import { getSimpleView } from './lib/pokemon/fetchSimpleView';
 import { simplePokemonView } from './types/simplePokemonView';
@@ -21,17 +21,18 @@ export default function Pokedex() {
         simplePokemonView[] | null
     >(null);
 
-    async function fetchPokemon() {
-        const allPokemon = await getAllPokemon();
+    useEffect(() => {
+        async function fetchPokemon() {
+            const allPokemon = await getAllPokemon();
 
-        // On all pokemon perform the getSimpleView function
-        const constructSimpleViews = await Promise.all(
-            allPokemon.map((thePokemon) => getSimpleView(thePokemon.name)),
-        );
-        setPokemonViews(constructSimpleViews);
-    }
-
-    fetchPokemon();
+            // On all pokemon perform the getSimpleView function
+            const constructSimpleViews = await Promise.all(
+                allPokemon.map((thePokemon) => getSimpleView(thePokemon.name)),
+            );
+            setPokemonViews(constructSimpleViews);
+        }
+        fetchPokemon();
+    }, []);
 
     return (
         <div>
