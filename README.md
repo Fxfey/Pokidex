@@ -60,6 +60,8 @@ Initially using a separated approach for the component and styling seemed like a
 
 Also if a component required multiple areas of style for different components you can allow for that in one file. i.e. creating a block using flex with many different children.
 
+I added the display of Pokemon Types using a better component approach and including creating a function which returns the required logo & color for pokemon types. The commit can be seen [here](https://github.com/Fxfey/Pokidex/commit/ce3d89384a362a1c683ba51291cec7241496bde5).
+
 ### Loading states
 
 I decided to build out a separate Skeleton loader for the Pokedex grid as its own component, this is far from re-usable and maintainable. Instead a better approach would be to allow a loading state to to be passed to components which would not take any data - this would then populate the relevant areas which would require skeleton loaders.
