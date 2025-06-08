@@ -51,3 +51,11 @@ Includes:
 
 Optional VSCode extension for IntelliSense:
 styled-components.vscode-styled-components
+
+## Reflections
+
+### Component Setup
+
+Initially using a separated approach for the component and styling seemed like a maintainable approach. After creating many blocks this way, it feels as if it created more bloat then actually required. Keeping the style within the block would be a more feasible approach for a project of this scale.
+
+Also if a component required multiple areas of style for different components you can allow for that in one file. i.e. creating a block using flex with many different children.
